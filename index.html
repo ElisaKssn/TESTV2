@@ -101,9 +101,9 @@
         ];
 
         const results = {
-            "bresilien": { text: "Tu es Matthieu le Brésilien ! 🌴" },
-            "regine": { text: "Tu es Matthieu Régine Marquise des Anges ! 💃" },
-            "fashionista": { text: "Tu es Matthieu Fashionista ! 👠" }
+            "bresilien": { text: "Tu es Matthieu le Brésilien ! 🌴", img: "matthieu_bresil.jpg" },
+            "regine": { text: "Tu es Matthieu Régine Marquise des Anges ! 💃", img: "mathieu_regine.jpg" },
+            "fashionista": { text: "Tu es Matthieu Fashionista ! 👠", img: "matthieu_fashionista.jpg" }
         };
 
         let scores = { "bresilien": 0, "regine": 0, "fashionista": 0 };
@@ -130,7 +130,7 @@
         function showResult() {
             let resultType = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
             let resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<h2>${results[resultType].text}</h2>`;
+            resultDiv.innerHTML = `<h2>${results[resultType].text}</h2><img src='${results[resultType].img}' />`;
             resultDiv.style.display = "block";
             quizDiv.style.display = "none";
         }
